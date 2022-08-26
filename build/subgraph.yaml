@@ -1,6 +1,6 @@
 specVersion: 0.0.4
 schema:
-  file: ./schema.graphql
+  file: schema.graphql
 features:
   - ipfsOnEthereumContracts
 dataSources:
@@ -22,7 +22,7 @@ dataSources:
         - Confirmation
       abis:
         - name: EventProjectWBW3
-          file: ./abis/EventProjectWBW3.json
+          file: EventProjectWBW3/abis/EventProjectWBW3.json
       eventHandlers:
         - event: ConfirmedAttendee(bytes32,address)
           handler: handleConfirmedAttendee
@@ -32,4 +32,4 @@ dataSources:
           handler: handleNewEventCreated
         - event: NewRSVP(bytes32,address)
           handler: handleNewRSVP
-      file: ./src/event-project-wbw-3.ts
+      file: EventProjectWBW3/EventProjectWBW3.wasm
