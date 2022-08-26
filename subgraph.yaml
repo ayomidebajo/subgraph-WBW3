@@ -1,6 +1,8 @@
-specVersion: 0.0.1
+specVersion: 0.0.4
 schema:
   file: ./schema.graphql
+features:
+  - ipfsOnEthereumContracts
 dataSources:
   - kind: ethereum
     name: EventProjectWBW3
@@ -8,15 +10,16 @@ dataSources:
     source:
       address: "0xfa204b8f50679abcf304340d86104d0d1210c286"
       abi: EventProjectWBW3
+      startBlock: 26(27761207)
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
-        - ConfirmedAttendee
-        - DepositsPaidOut
-        - NewEventCreated
-        - NewRSVP
+        - Event
+        - Account
+        - RSVP
+        - Confirmation
       abis:
         - name: EventProjectWBW3
           file: ./abis/EventProjectWBW3.json
